@@ -5,36 +5,36 @@
 /*   ----- Imports  -----  */
   /* @import 'node_modules/modern-normalize/modern-normalize.css';  npm install modern-normalize  Resets elements for browser consistency.  https://www.npmjs.com/package/modern-normalize */         
   /* @import "component1.css";   Component-specific stylesheets, if any.   */
-  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cinzel:wght@400..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cinzel:wght@400..900&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 /*   ----- Variables  -----  */
 :root {
   /* Solid Colors */
-  --light-gray: #A3ABAE;
-  --mid-gray: #4E646B;
-  --dark-gray: #34354A;
-  --mauve: #A65D6A;
-  --navy-blue: #030526;
-  --golden-yellow: #F2B544;
-  --coral-pink: #F26457;
-  --brown-gold: #BB7B49;
+  --deep-blue: #03588C;
+  --dark-blue: #023859;
+  --very-dark-blue: #052026;
+  --dark-green-blue: #03261C;
+  --light-gray: #F2F2F2;
+
   /* Transparent Colors */
-  --light-grayT: rgba(163, 171, 174, .95);
-  --mid-grayT: rgba(78, 100, 107, .95);
-  --brown-goldT: rgba(187, 123, 73, .85);
-  --dark-grayT: rgba(52, 53, 74, .85);
-  }
+  --deep-blueT: rgba(3, 88, 140, 0.95);
+  --dark-blueT: rgba(2, 56, 89, 0.95);
+  --very-dark-blueT: rgba(5, 32, 38, 0.85);
+  --dark-green-blueT: rgba(3, 38, 28, 0.85);
+  --light-grayT: rgba(242, 242, 242, 0.85);
+}
+
   
   /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
   body {       /* Can alternatively define in html {}. */
     background-color:;
-    background-image: url(images/hat_on_chair_background.jpg);
+    background-image: url(images/heceta_lighthouse.JPG);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: top-left;
-    color: var(--navy-blue);
+    color: var(--dark-blue);
     font-family: "Quicksand", sans-serif; /* Define with at least one font name and its related generic family name.*/
     margin: 0 auto;
     padding: 0 5%;
@@ -43,9 +43,9 @@
   
   /*  ----- Page layout blocks -----  */
   header {
-    background-color: var(--mid-grayT);
+    background-color: var(--light-grayT);
     overflow-x: hidden;
-    border: 2px solid var(--dark-gray);
+    border: 2px solid var(--very-dark-blue);
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -58,7 +58,7 @@
   }
   main {    
     width: 100%;
-    border: 1px solid var(--mid-gray);
+    border: 1px solid var(--very-dark-blue);
     background-color: var(--light-grayT);
     padding: 10px;
     box-sizing: border-box;
@@ -77,11 +77,11 @@
     }
     .gallery figure {
       display: flex;
-      background-color: var(--navy-blue);
+      background-color: var(--dark-blue);
       width: 50%;
       flex-direction: column;
       align-items: center;
-      border: 1.5px solid var(--mauve);
+      border: 1.5px solid var(--dark-green-blue);
       padding: 10px;
       text-align: center;
     }
@@ -94,7 +94,7 @@
     .gallery figcaption {
       display: flex;
       flex-wrap: wrap;
-      color: var(--coral-pink);
+      color: var(--light-gray);
       margin-top: 10px;
       font-style: italic;
     }
@@ -102,8 +102,8 @@
   div {}
   aside {}
   footer {
-    background-color: var(--mid-grayT);
-    border: 2px solid var(--dark-gray);
+    background-color: var(--light-grayT);
+    border: 2px solid var(--very-dark-blue);
     width: 100%;
     padding: 3px;
     box-sizing: border-box;
@@ -127,9 +127,9 @@
     gap: 10px;
   }
   nav a {
-    color: var(--brown-gold);
+    color: var(--light-gray);
     margin: 5px;
-    background-color: var(--dark-grayT);
+    background-color: var(--dark-blueT);
     padding: 10px 20px;
     border: 1px solid var(--light-gray);
     text-decoration: none;
@@ -138,19 +138,20 @@
 
   }
   nav a:hover {
-    background-color: var(--brown-goldT);
-    color: var(--dark-gray);
+    background-color: var(--dark-green-blueT);
+    color: var(--light-gray);
+    border: 1px solid var(--light-gray);
     cursor: pointer;
   }
 
   .local a {
-    color: var(--dark-gray);  /* Inverse: dark-gray text on brown-gold background */
-    background-color: var(--brown-gold);  /* Inverse background */
-    border: 1px solid var(--light-gray);  /* Keeps border consistent */
+    color: var(--very-dark-blue);  /* Inverse: dark-gray text on brown-gold background */
+    background-color: var(--light-gray);  /* Inverse background */
+    border: 1px solid var(--very-dark-blue);  /* Keeps border consistent */
   }
 
   .local:hover {
-    color: var(--brown-gold)
+    color: var(--dark-green-blue);
   }
   
   /*  -----  Typography  ----- */
@@ -211,15 +212,15 @@
   }
   
   table#grocery thead th {
-      background-color: var(--dark-gray);
-      color: var(--golden-yellow);
+      background-color: var(--dark-green-blue);
+      color: var(--light-gray);
       padding: 10px;
       text-align: left;
       font-family: "Cinzel", serif;
   }
   
   table#grocery tbody td {
-      border: 1px solid var(--mid-gray);
+      border: 1px solid var(--very-dark-blue);
       padding: 10px;
       font-family: "Quicksand", sans-serif;
   }
@@ -241,17 +242,17 @@
   }
   
   table#grocery tbody td button {
-      background-color: var(--navy-blue);
-      color: var(--golden-yellow);
-      border: 1px solid var(--golden-yellow);
+      background-color: var(--dark-blue);
+      color: var(--light-gray);
+      border: 1px solid var(--light-gray);
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s, color 0.3s;
   }
   
   table#grocery tbody td button:hover {
-      background-color: var(--golden-yellow);
-      color: var(--navy-blue);
+      background-color: var(--light-gray);
+      color: var(--dark-blue);
   }
   
   caption {}
@@ -270,21 +271,21 @@
   
   /*  ----- Form ----- */
   form {
-    background-color: var(--brown-goldT);
-    color: var(--navy-blue);
+    background-color: var(--dark-green-blueT);
+    color: var(--dark-blue);
     padding: 10px;
     margin: 10px;
-    border: 1px solid var(--mid-gray);
+    border: 1px solid var(--very-dark-blue);
     border-radius: 5px;
   }
 
   fieldset {
-    border: var(--dark-gray) solid 1.25px;
+    border: var(--very-dark-blue) solid 1.25px;
     margin-top: 10px;
     padding: 10px;
   }
   legend {
-    color: var(--navy-blue);
+    color: var(--dark-blue);
     font-size: 1.2em;
   }
 
@@ -296,9 +297,9 @@
   button {
     font-size: 125%;
     align-content: center;
-    background-color: var(--navy-blue);
-    color: var(--golden-yellow);
-    border: 1px solid var(--golden-yellow);
+    background-color: var(--dark-blue);
+    color: var(--light-gray);
+    border: 1px solid var(--light-gray);
     border-radius: 5px;
     padding: 10px 20px;
     margin: 8px 0;
@@ -308,8 +309,8 @@
   }
   button:hover {
     font-size: 128%;
-    background-color: var(--golden-yellow);
-    color: var(--navy-blue);
+    background-color: var(--light-gray);
+    color: var(--dark-blue);
   }
   input {
     font-size: 125%;
@@ -317,18 +318,18 @@
   input[type="text"],
   input[type="email"] {
     background-color: var(--light-grayT);
-    color: var(--navy-blue);
+    color: var(--dark-blue);
     width: 45%;
     margin: 10px 0;
     padding: auto;
   }
   *:required {
-    border: 2px solid var(--dark-grayT);
+    border: 2px solid var(--very-dark-blueT);
   }
   select {
     font-size: 125%;
     background-color: var(--light-grayT);
-    color: var(--navy-blue);
+    color: var(--dark-blue);
     width: 45%;
     margin: 10px 0;
   }
@@ -339,7 +340,7 @@
   textarea {
     font-size: 125%;
     background-color: var(--light-grayT);
-    color: var(--navy-blue);
+    color: var(--dark-blue);
     height: 100%;
     width: 50%;
     margin-top: 5px;
@@ -397,4 +398,3 @@
   
   /*   ===== PRINT  media query overrides previous styles =====  */
   @media print {}
-  
