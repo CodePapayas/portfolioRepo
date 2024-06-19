@@ -1,0 +1,19 @@
+{
+  "name": "grocery-tracker-backend",
+  "version": "2023",
+  "description": "An app that tracks how much a person purchases in groceries vs their expected consumption.",
+  "main": "grocery-tracker-controller.mjs", 
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon grocery-tracker-controller.mjs"
+  },
+  "author": "Zachary Z. Wilkins-Olson",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.1",
+    "rest": "^2.0.0",
+    "nodemon": "^3.0.1"
+  }
+}

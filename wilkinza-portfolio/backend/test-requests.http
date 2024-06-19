@@ -1,0 +1,91 @@
+### CREATE 1
+POST http://localhost:3000/foodItems HTTP/1.1
+Content-Type: application/json
+
+{
+    "food_type": "Apple",
+    "date_purchased": "2023-01-01",
+    "date_of_expected_next_purchase": "2023-01-10",
+    "date_of_actual_next_purchase": "2023-01-09",
+    "qty_purchased": 7,
+    "qty_remaining": 6
+}
+
+### CREATE 2
+POST http://localhost:3000/foodItems HTTP/1.1
+Content-Type: application/json
+
+{
+    "food_type": "Banana",
+    "date_purchased": "2023-02-01",
+    "date_of_expected_next_purchase": "2023-02-10",
+    "date_of_actual_next_purchase": "2023-02-09",
+    "qty_purchased": 81,
+    "qty_remaining": 82
+}
+
+### CREATE 3
+POST http://localhost:3000/foodItems HTTP/1.1
+Content-Type: application/json
+
+{
+    "food_type": "Carrot",
+    "date_purchased": "2023-03-01",
+    "date_of_expected_next_purchase": "2023-03-10",
+    "date_of_actual_next_purchase": "2023-03-09",
+    "qty_purchased": 2,
+    "qty_remaining": 157
+}
+
+### CREATE 4
+POST http://localhost:3000/foodItems HTTP/1.1
+Content-Type: application/json
+
+{
+    "food_type": "Date",
+    "date_purchased": "2023-04-01",
+    "date_of_expected_next_purchase": "2023-04-10",
+    "date_of_actual_next_purchase": "2023-04-09",
+    "qty_purchased": 8,
+    "qty_remaining": 4
+}
+### CREATE 5
+POST http://localhost:3000/foodItems HTTP/1.1
+Content-Type: application/json
+
+{
+    "food_type": "Eggplant",
+    "date_purchased": "2023-05-01",
+    "date_of_expected_next_purchase": "2023-05-10",
+    "date_of_actual_next_purchase": "2023-05-09",
+    "qty_purchased": 6,
+    "qty_remaining": 40
+}
+
+### RETRIEVE all documents
+GET http://localhost:3000/foodItems HTTP/1.1
+
+### RETRIEVE a document by its ID
+### Replace the following ID with one that exists in the collection
+GET http://localhost:3000/foodItems/66537a1b4b8839b7fb5ea98e HTTP/1.1
+
+### UPDATE one document's year by ID
+### Replace the ID in the following request with one that exists
+PUT http://localhost:3000/foodItems/66537c594b8839b7fb5ea99e HTTP/1.1
+Content-Type: application/json
+
+{
+    "food_type": "Apple",
+    "date_purchased": "1993-01-01",
+    "date_of_expected_next_purchase": "1994-01-15",
+    "date_of_actual_next_purchase": "1995-01-14",
+    "qty_purchased": 8,
+    "qty_remaining": 125
+}
+
+### DELETE by ID (responds with nothing if successful)
+### Replace the ID with one that exists in the collection
+DELETE http://localhost:3000/foodItems/66537a1b4b8839b7fb5ea98e HTTP/1.1
+
+### RETRIEVE all documents (responds with 4 or the original 5)
+GET http://localhost:3000/foodItems HTTP/1.1

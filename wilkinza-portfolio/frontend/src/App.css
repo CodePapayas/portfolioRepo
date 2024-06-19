@@ -1,0 +1,400 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+  /* @import 'node_modules/modern-normalize/modern-normalize.css';  npm install modern-normalize  Resets elements for browser consistency.  https://www.npmjs.com/package/modern-normalize */         
+  /* @import "component1.css";   Component-specific stylesheets, if any.   */
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cinzel:wght@400..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+/*   ----- Variables  -----  */
+:root {
+  /* Solid Colors */
+  --light-gray: #A3ABAE;
+  --mid-gray: #4E646B;
+  --dark-gray: #34354A;
+  --mauve: #A65D6A;
+  --navy-blue: #030526;
+  --golden-yellow: #F2B544;
+  --coral-pink: #F26457;
+  --brown-gold: #BB7B49;
+  /* Transparent Colors */
+  --light-grayT: rgba(163, 171, 174, .95);
+  --mid-grayT: rgba(78, 100, 107, .95);
+  --brown-goldT: rgba(187, 123, 73, .85);
+  --dark-grayT: rgba(52, 53, 74, .85);
+  }
+  
+  /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+  body {       /* Can alternatively define in html {}. */
+    background-color:;
+    background-image: url(images/hat_on_chair_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top-left;
+    color: var(--navy-blue);
+    font-family: "Quicksand", sans-serif; /* Define with at least one font name and its related generic family name.*/
+    margin: 0 auto;
+    padding: 0 5%;
+    max-width: 75%;
+  }
+  
+  /*  ----- Page layout blocks -----  */
+  header {
+    background-color: var(--mid-grayT);
+    overflow-x: hidden;
+    border: 2px solid var(--dark-gray);
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  header img {
+    width: 36px;
+    padding: 2px;
+  }
+  main {    
+    width: 100%;
+    border: 1px solid var(--mid-gray);
+    background-color: var(--light-grayT);
+    padding: 10px;
+    box-sizing: border-box;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  section {}
+  article {}
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 20px;
+      justify-content: center;
+      margin: 20px;
+    }
+    .gallery figure {
+      display: flex;
+      background-color: var(--navy-blue);
+      width: 50%;
+      flex-direction: column;
+      align-items: center;
+      border: 1.5px solid var(--mauve);
+      padding: 10px;
+      text-align: center;
+    }
+    .gallery figure img {
+      object-fit: contain;
+      height: auto;
+      width: 100%;
+      max-width: 100%;
+    }
+    .gallery figcaption {
+      display: flex;
+      flex-wrap: wrap;
+      color: var(--coral-pink);
+      margin-top: 10px;
+      font-style: italic;
+    }
+    #topic2 {}
+  div {}
+  aside {}
+  footer {
+    background-color: var(--mid-grayT);
+    border: 2px solid var(--dark-gray);
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  
+  /* ----- Anchors ----- Text links */
+  a {}
+  a:link {}
+  a:hover {}
+  a:active {}
+  a:visited {}
+  
+  /*  ----- Navigation ----- Override text links for navigation only.  */
+  nav {
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  nav a {
+    color: var(--brown-gold);
+    margin: 5px;
+    background-color: var(--dark-grayT);
+    padding: 10px 20px;
+    border: 1px solid var(--light-gray);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+
+  }
+  nav a:hover {
+    background-color: var(--brown-goldT);
+    color: var(--dark-gray);
+    cursor: pointer;
+  }
+
+  .local a {
+    color: var(--dark-gray);  /* Inverse: dark-gray text on brown-gold background */
+    background-color: var(--brown-gold);  /* Inverse background */
+    border: 1px solid var(--light-gray);  /* Keeps border consistent */
+  }
+
+  .local:hover {
+    color: var(--brown-gold)
+  }
+  
+  /*  -----  Typography  ----- */
+  p {}
+  br {}
+  ol, ul, dl {}
+  li {}
+  dt {}
+  dd {}
+  
+  h1, h2, h3, h4, h5, h6 {    
+    font-family: "Cinzel", serif;
+  } 
+  h1 {}
+  h2 {}
+  h3 {}
+  h4 {}
+  h5 {}
+  h6 {}
+  
+  abbr {}
+  acronym {}
+  address {}
+  blockquote {}
+    q {}
+    cite {}
+  em {}
+  hr {}
+  mark {}
+  s {}
+  span {}
+  strong {}
+  sub {}
+  sup {}
+  time {}
+  
+  /*  ----- Coding or instructional typography ----- */
+  pre {}
+  code {}
+  kbd {}
+  samp {}
+  var {}
+  del {} 
+  ins {}
+  
+  /*  ----- Table ----- */
+  table {}
+  table#grocery {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+  }
+  
+  table#grocery caption {
+      font-family: "Cinzel", serif;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+  }
+  
+  table#grocery thead th {
+      background-color: var(--dark-gray);
+      color: var(--golden-yellow);
+      padding: 10px;
+      text-align: left;
+      font-family: "Cinzel", serif;
+  }
+  
+  table#grocery tbody td {
+      border: 1px solid var(--mid-gray);
+      padding: 10px;
+      font-family: "Quicksand", sans-serif;
+  }
+  
+  table#grocery tbody td input,
+  table#grocery tbody td button {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      box-sizing: border-box;
+      font-family: "Quicksand", sans-serif;
+  }
+  
+  table#grocery tbody td label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-family: "Quicksand", sans-serif;
+  }
+  
+  table#grocery tbody td button {
+      background-color: var(--navy-blue);
+      color: var(--golden-yellow);
+      border: 1px solid var(--golden-yellow);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+  }
+  
+  table#grocery tbody td button:hover {
+      background-color: var(--golden-yellow);
+      color: var(--navy-blue);
+  }
+  
+  caption {}
+  thead {}
+  tbody {}
+  tfoot {}
+  tr {}
+      tr:nth-child(even) {}
+  th {}
+  td {}
+      td:nth-child(1) {}
+  colgroup {}
+  data {}
+  datalist {}
+  
+  
+  /*  ----- Form ----- */
+  form {
+    background-color: var(--brown-goldT);
+    color: var(--navy-blue);
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid var(--mid-gray);
+    border-radius: 5px;
+  }
+
+  fieldset {
+    border: var(--dark-gray) solid 1.25px;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  legend {
+    color: var(--navy-blue);
+    font-size: 1.2em;
+  }
+
+  label {
+    display: block;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+  button {
+    font-size: 125%;
+    align-content: center;
+    background-color: var(--navy-blue);
+    color: var(--golden-yellow);
+    border: 1px solid var(--golden-yellow);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 8px 0;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  button:hover {
+    font-size: 128%;
+    background-color: var(--golden-yellow);
+    color: var(--navy-blue);
+  }
+  input {
+    font-size: 125%;
+  }
+  input[type="text"],
+  input[type="email"] {
+    background-color: var(--light-grayT);
+    color: var(--navy-blue);
+    width: 45%;
+    margin: 10px 0;
+    padding: auto;
+  }
+  *:required {
+    border: 2px solid var(--dark-grayT);
+  }
+  select {
+    font-size: 125%;
+    background-color: var(--light-grayT);
+    color: var(--navy-blue);
+    width: 45%;
+    margin: 10px 0;
+  }
+
+  optgroup {}
+  option {}
+
+  textarea {
+    font-size: 125%;
+    background-color: var(--light-grayT);
+    color: var(--navy-blue);
+    height: 100%;
+    width: 50%;
+    margin-top: 5px;
+  }
+  output {}
+  meter {}
+  progress {}
+  
+  
+  /* ----- Media ----- */
+  figure {
+    width: auto;
+  }
+    figcaption {}
+    figure img {}
+  svg {}
+  picture {}
+    source {}
+  iframe {}
+  video {}
+  audio {}
+  embed {}
+  object {}
+  
+  /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+  .gallery {}
+  
+  .floatright {}
+  .floatleft {}
+  .center-middle {}
+  
+  .ten {}
+  .twenty {}
+  .thirty {}
+  .forty {}
+  .fifty {}
+  .sixty {}
+  .seventy {}
+  .eighty {}
+  
+  .radius {}
+  .circle {}
+  .boxshadow {}
+  .tshadow {} 
+  .gradient {}
+  .shape {}
+  
+  @keyframes App-logo {}
+  
+  /*   ===== TABLET  media query overrides mobile styles ===== */
+  @media all and (min-width: 600px) {}
+  
+  /*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+  @media all and (min-width: 1080px) {}
+  
+  /*   ===== PRINT  media query overrides previous styles =====  */
+  @media print {}
+  
