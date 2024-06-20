@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4f3eb2bc.css",
+    "main.js": "/static/js/main.be6c1a4a.js",
+    "static/js/453.dea65dd6.chunk.js": "/static/js/453.dea65dd6.chunk.js",
+    "static/media/heceta_lighthouse.JPG": "/static/media/heceta_lighthouse.c240a55592292450656d.JPG",
+    "static/media/origami-box-with-ricola.png": "/static/media/origami-box-with-ricola.e596fdde0e4168350060.png",
+    "static/media/random-number-gen-output.PNG": "/static/media/random-number-gen-output.8cd5398117cdb2a8fae5.PNG",
+    "static/media/submit-routes-matching-app.PNG": "/static/media/submit-routes-matching-app.337486ce60b5d7668104.PNG",
+    "static/media/streamblend-prototype.PNG": "/static/media/streamblend-prototype.e78b8d9e5aebb97909cc.PNG",
+    "static/media/assembly-random-num-gen-code.PNG": "/static/media/assembly-random-num-gen-code.c02ca606052a2743c394.PNG",
+    "static/media/origami-boxes-on-shelf.jpg": "/static/media/origami-boxes-on-shelf.99906e090da62da262b1.jpg",
+    "static/media/assembly-project-writeval-procedure.PNG": "/static/media/assembly-project-writeval-procedure.5e8cade732842fd4996d.PNG",
+    "static/media/matching-app-python-logic.PNG": "/static/media/matching-app-python-logic.ae66cfe56174c7a098d4.PNG",
+    "static/media/client-survey-website-screenshot.PNG": "/static/media/client-survey-website-screenshot.e6957de3b9781e7f9868.PNG",
+    "static/media/client-survey-matching-app-output2.png": "/static/media/client-survey-matching-app-output2.19d29f22b9262c38e7ca.png",
+    "index.html": "/index.html",
+    "main.4f3eb2bc.css.map": "/static/css/main.4f3eb2bc.css.map",
+    "main.be6c1a4a.js.map": "/static/js/main.be6c1a4a.js.map",
+    "453.dea65dd6.chunk.js.map": "/static/js/453.dea65dd6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4f3eb2bc.css",
+    "static/js/main.be6c1a4a.js"
+  ]
+}
