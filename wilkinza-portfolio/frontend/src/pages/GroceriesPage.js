@@ -7,10 +7,11 @@ import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
 function GroceriesPage({ setGrocery }) {
     const navigate = useNavigate();
     const [foodItems, setGroceries] = useState([]);
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://portfoliorepobackend.onrender.com';
 
     const loadGroceries = async () => {
         try {
-            const response = await fetch(`https://portfoliorepobackend.onrender.com/foodItems`) // Updated URL
+            const response = await fetch(`${backendUrl}/fooditems`); // Ensure this uses backendUrl
             const contentType = response.headers.get('content-type');
 
             if (contentType && contentType.indexOf('application/json') !== -1) {
@@ -24,16 +25,16 @@ function GroceriesPage({ setGrocery }) {
             console.error('Failed to fetch groceries:', error);
             setGroceries([]); // Ensure foodItems is an array
         }
-    }
+    };
 
     const onEditGrocery = (grocery) => {
         setGrocery(grocery);
         navigate("/editGroceries");
-    }
+    };
 
     const onDeleteGrocery = async (_id) => {
         try {
-            const response = await fetch(`https://portfoliorepobackend.onrender.com/foodItems/${_id}`, { // Updated URL
+            const response = await fetch(`${backendUrl}/fooditems/${_id}`, {
                 method: 'DELETE'
             });
             if (response.status === 200) {
@@ -44,7 +45,7 @@ function GroceriesPage({ setGrocery }) {
         } catch (error) {
             console.error(`Error deleting grocery item with id=${_id}:`, error);
         }
-    }
+    };
 
     useEffect(() => {
         loadGroceries();
@@ -53,21 +54,21 @@ function GroceriesPage({ setGrocery }) {
     return (
         <>
             <h2>Recent Grocery Purchases: Example</h2>
-            <article>            
+            <article>
                 <p>
                     This is an example of a CRUD application that allows you to add, edit, and delete grocery items. Add a grocery item by clicking the "Add Grocery Item" button below. You can also edit or delete existing grocery items by clicking the edit or delete icons in the table.
                 </p>
             </article>
 
-            <nav>            
-            <Link to="/addGroceries" className="add-grocery-button">
-                <FaPlus /> Add Grocery Item
-            </Link>
+            <nav>
+                <Link to="/addGroceries" className="add-grocery-button">
+                    <FaPlus /> Add Grocery Item
+                </Link>
             </nav>
-            <GroceryList 
+            <GroceryList
                 foodItems={foodItems}
-                onEdit={onEditGrocery} 
-                onDelete={onDeleteGrocery} 
+                onEdit={onEditGrocery}
+                onDelete={onDeleteGrocery}
             />
         </>
     );
