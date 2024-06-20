@@ -29,6 +29,7 @@ const ImageGallery = () => {
   return (
     <div>
       <h1>Image Gallery</h1>
+      <p>See the below photo carousel for an example of basic interactivity in a website. Swipe or click to progress through the carousel. Hover/tap the photo to read the caption.</p>
       <Carousel>
         {images.map((image) => (
           <div key={image.id}>

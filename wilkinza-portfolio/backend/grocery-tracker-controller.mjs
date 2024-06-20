@@ -29,7 +29,7 @@ app.use(express.json());  // REST needs JSON MIME type.
 app.get('/favicon.ico', (req, res) => res.status(204).end());
 
 app.post('/api/contact', async (req, res) => {
-    const { name, message } = req.body;
+    const { name, message, email, phoneNumber } = req.body;
 
     const transporter = nodemailer.createTransport({
         service: 'gmail', // You can use other email services
@@ -43,7 +43,7 @@ app.post('/api/contact', async (req, res) => {
         from: process.env.EMAIL_USER,
         to: process.env.EMAIL_USER,
         subject: `Contact form submission from ${name}`,
-        text: message,
+        text: `${message}\n\nEmail: ${email}\n\nPhone Number: ${phoneNumber}`
     };
 
     try {

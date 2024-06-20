@@ -3,16 +3,17 @@ import React from 'react';
 const TopicsPage = () => {
     return (
         <div>
-            <h2>Web Dev Concepts and Career Goals</h2>
+            <h2>Web Dev Concepts</h2>
             <article id="careerGoals">
-                <h3>Career Goals</h3>
-                <p>Welcome to my portfolio React app! My name is Zach Wilkins-Olson, and I am a System Administrator who is transitioning into a Full Stack Web Developer. I am currently learning the MERN stack and am looking for a job in web development. I am also interested in learning more about DevOps and Cybersecurity.  This app was built using a MERN stack, or MongoDB, Express.js, React, and Node.js, as well as HTML and CSS. This is the culmination of the CS290 class, meant to showcase the skills learned throughout the course. The app itself is a CRUD app: Create, Read, Update, Delete. On the Groceries tab this functionality is demonstrated, and the Topics page covers the major points learned in this course. Thank you for checking out my website!
+                <h3>Purpose of the Page</h3>
+                <p>
+                    Welcome! This is an example of a React application that showcases various web development concepts and technologies. The purpose of this page is to provide an overview of the key concepts and technologies used in web development, including front-end and back-end technologies, as well as the major tools and frameworks commonly used in building modern web applications. The page also highlights the importance of understanding these concepts for aspiring web developers and provides resources for further learning. If you are interested in learning more about web development, feel free to explore the content on this page and check out the additional resources provided.
                 </p>
             </article>
             <article id="technologies">
     <h3>Major Technologies Used in This Website</h3>
     <p>
-        The following technologies are used in this website <strong>***TO BE EXPANDED***</strong>:
+        The following technologies are used in this website:
     </p>
     <ul>
         <li><strong>HTML5:</strong> The foundational markup language used to define the structure of the web pages in this React application. React apps like this use JSX, a syntax extension of HTML5, to describe the UI structure within JavaScript.</li>

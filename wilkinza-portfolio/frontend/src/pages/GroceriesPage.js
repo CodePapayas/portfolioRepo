@@ -52,9 +52,10 @@ function GroceriesPage({ setGrocery }) {
 
     return (
         <>
-            <h2>Recent Grocery Purchases</h2>
+            <h2>Recent Grocery Purchases: Example</h2>
             <article>            
-                <p>Track your recent purchases here. By comparing the quantity you purchased last to the current purchase you will be able to determine if you are purchasing the most efficient amounts of your pantry staples.
+                <p>
+                    This is an example of a CRUD application that allows you to add, edit, and delete grocery items. Add a grocery item by clicking the "Add Grocery Item" button below. You can also edit or delete existing grocery items by clicking the edit or delete icons in the table.
                 </p>
             </article>
 
