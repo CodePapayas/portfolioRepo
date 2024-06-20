@@ -15,9 +15,6 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 // CORS configuration to allow multiple origins
 const allowedOrigins = ['https://portfoliorepo.onrender.com', 'http://localhost:3000', 'http://127.0.0.1:3000'];
@@ -39,7 +36,7 @@ app.use(express.json());
 
 app.get('/favicon.ico', (req, res) => res.status(204).end());
 
-app.post('/api/contact', async (req, res) => {
+app.post('https://portfoliorepo.onrender.com/api/contact', async (req, res) => {
     const { name, message, email, phoneNumber } = req.body;
 
     const transporter = nodemailer.createTransport({
@@ -66,7 +63,7 @@ app.post('/api/contact', async (req, res) => {
     }
 });
 
-app.post('/foodItems', (req, res) => {
+app.post('https://portfoliorepo.onrender.com/foodItems', (req, res) => {
     foodItems.createFoodItem(
         req.body.food_type, 
         req.body.date_purchased, 
@@ -86,7 +83,7 @@ app.post('/foodItems', (req, res) => {
 });
 
 // RETRIEVE controller
-app.get('/foodItems', async (req, res) => {
+app.get('https://portfoliorepo.onrender.com/foodItems', async (req, res) => {
     console.log('Retrieving all food items');
     try {
         const items = await foodItems.retrieveFoodItems();
@@ -104,7 +101,7 @@ app.get('/foodItems', async (req, res) => {
 });
 
 // RETRIEVE by ID controller
-app.get('/foodItems/:_id', (req, res) => {
+app.get('https://portfoliorepo.onrender.com/foodItems/:_id', (req, res) => {
     foodItems.retrieveFoodItemByID(req.params._id)
     .then(foodItem => { 
         if (foodItem !== null) {
@@ -121,7 +118,7 @@ app.get('/foodItems/:_id', (req, res) => {
 });
 
 // UPDATE controller
-app.put('/foodItems/:_id', (req, res) => {
+app.put('https://portfoliorepo.onrender.com/foodItems/:_id', (req, res) => {
     foodItems.updateFoodItem(
         req.params._id, 
         req.body.food_type, 
@@ -142,7 +139,7 @@ app.put('/foodItems/:_id', (req, res) => {
 });
 
 // DELETE Controller
-app.delete('/foodItems/:_id', (req, res) => {
+app.delete('https://portfoliorepo.onrender.com/foodItems/:_id', (req, res) => {
     foodItems.deleteFoodItemById(req.params._id)
         .then(deletedCount => {
             if (deletedCount === 1) {
