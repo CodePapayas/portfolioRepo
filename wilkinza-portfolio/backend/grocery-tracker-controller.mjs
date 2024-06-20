@@ -2,6 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import * as foodItems from './grocery-tracker-model.mjs';
 import nodemailer from 'nodemailer';
+import path from 'path';
 import cors from 'cors';
 
 const PORT = process.env.PORT || 8000;
