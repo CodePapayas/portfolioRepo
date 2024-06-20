@@ -10,7 +10,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 10000;
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'build')));
@@ -20,7 +20,7 @@ app.get('*', (req, res) => {
 });
 
 // CORS configuration to allow multiple origins
-const allowedOrigins = ['https://portfoliorepo.onrender.com/', 'http://localhost:3000', 'http://127.0.0.1:3000'];
+const allowedOrigins = ['https://portfoliorepo.onrender.com', 'http://localhost:3000', 'http://127.0.0.1:3000'];
 
 app.use(cors({
     origin: (origin, callback) => {
