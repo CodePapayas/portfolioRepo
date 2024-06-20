@@ -18,6 +18,5 @@
     "nodemailer": "^6.9.14",
     "nodemon": "^3.0.1",
     "rest": "^2.0.0"
-  },
-  "proxy": "https://portfoliorepobackend.onrender.com/"
+  }
 }
