@@ -19,5 +19,5 @@
     "nodemon": "^3.0.1",
     "rest": "^2.0.0"
   },
-  "proxy": "http://localhost:8000"
+  "proxy": "https://portfoliorepobackend.onrender.com/"
 }
