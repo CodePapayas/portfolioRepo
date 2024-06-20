@@ -4,6 +4,11 @@ import * as foodItems from './grocery-tracker-model.mjs';
 import nodemailer from 'nodemailer';
 import path from 'path';
 import cors from 'cors';
+import { fileURLToPath } from 'url';
+
+// Get the directory name of the current module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const PORT = process.env.PORT || 8000;
 const app = express();
@@ -19,7 +24,6 @@ const allowedOrigins = ['http://localhost:3000', 'http://127.0.0.1:3000'];
 
 app.use(cors({
     origin: (origin, callback) => {
-        // Allow requests with no origin (like mobile apps or curl requests)
         if (!origin) return callback(null, true);
         if (allowedOrigins.indexOf(origin) === -1) {
             const msg = `The CORS policy for this site does not allow access from the specified Origin.`;
@@ -31,7 +35,7 @@ app.use(cors({
     allowedHeaders: 'Content-Type'
 }));
 
-app.use(express.json());  // REST needs JSON MIME type.
+app.use(express.json());
 
 app.get('/favicon.ico', (req, res) => res.status(204).end());
 
@@ -81,7 +85,7 @@ app.post('/foodItems', (req, res) => {
     });
 });
 
-// RETRIEVE controller ****************************************************
+// RETRIEVE controller
 app.get('/foodItems', async (req, res) => {
     console.log('Retrieving all food items');
     try {
@@ -116,7 +120,7 @@ app.get('/foodItems/:_id', (req, res) => {
     });
 });
 
-// UPDATE controller ************************************
+// UPDATE controller
 app.put('/foodItems/:_id', (req, res) => {
     foodItems.updateFoodItem(
         req.params._id, 
@@ -137,7 +141,7 @@ app.put('/foodItems/:_id', (req, res) => {
     });
 });
 
-// DELETE Controller ******************************
+// DELETE Controller
 app.delete('/foodItems/:_id', (req, res) => {
     foodItems.deleteFoodItemById(req.params._id)
         .then(deletedCount => {
