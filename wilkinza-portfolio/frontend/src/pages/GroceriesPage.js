@@ -7,10 +7,11 @@ import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
 function GroceriesPage({ setGrocery }) {
     const navigate = useNavigate();
     const [foodItems, setGroceries] = useState([]);
+    const backendUrl = 'https://portfoliorepobackend.onrender.com';
 
     const loadGroceries = async () => {
         try {
-            const response = await fetch('http://localhost:8000/foodItems'); // Updated URL
+            const response = await fetch(`${backendUrl}/foodItems`) // Updated URL
             const contentType = response.headers.get('content-type');
 
             if (contentType && contentType.indexOf('application/json') !== -1) {
@@ -33,7 +34,7 @@ function GroceriesPage({ setGrocery }) {
 
     const onDeleteGrocery = async (_id) => {
         try {
-            const response = await fetch(`http://localhost:8000/foodItems/${_id}`, { // Updated URL
+            const response = await fetch(`${backendUrl}/foodItems/${_id}`, { // Updated URL
                 method: 'DELETE'
             });
             if (response.status === 200) {
