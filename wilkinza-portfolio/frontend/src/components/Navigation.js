@@ -11,6 +11,8 @@ function groceryNav() {
         <Link to="/">Home</Link>
         <Link to="/topics">Topics</Link>
         <Link to="/groceries">Groceries</Link>
+        <Link to="/gallery">Gallery</Link>
+        <Link to="/contact">Contact</Link>
     </nav>
   );
 }

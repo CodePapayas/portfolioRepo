@@ -1,12 +1,47 @@
 import 'dotenv/config';
 import express from 'express';
 import * as foodItems from './grocery-tracker-model.mjs';
+import nodemailer from 'nodemailer';
+import cors from 'cors';
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 const app = express();
+
+// CORS configuration to allow multiple origins
+// const allowedOrigins = ['http://localhost:3000', 'http://127.0.0.1:3000'];
+
+app.use(cors());
+
 app.use(express.json());  // REST needs JSON MIME type.
+
 app.get('/favicon.ico', (req, res) => res.status(204).end());
 
+app.post('/api/contact', async (req, res) => {
+    const { name, message } = req.body;
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail', // You can use other email services
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
+        },
+    });
+
+    const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_USER,
+        subject: `Contact form submission from ${name}`,
+        text: message,
+    };
+
+    try {
+        await transporter.sendMail(mailOptions);
+        res.status(200).send('Message sent successfully');
+    } catch (error) {
+        console.error('Error sending email:', error);
+        res.status(500).send('Error sending message');
+    }
+});
 
 app.post('/foodItems', (req, res) => {
     foodItems.createFoodItem(
@@ -26,7 +61,6 @@ app.post('/foodItems', (req, res) => {
         res.status(400).json({ Error: 'Failed to create a new food item.' });
     });
 });
-
 
 // RETRIEVE controller ****************************************************
 app.get('/foodItems', async (req, res) => {

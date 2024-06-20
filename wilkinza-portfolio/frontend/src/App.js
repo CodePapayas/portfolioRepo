@@ -11,6 +11,8 @@ import TopicsPage from './pages/TopicsPage';
 import GroceriesPage from './pages/GroceriesPage';
 import AddGroceriesPageTable from './pages/AddGroceryPageTable';
 import EditGroceriesPageTable from './pages/EditGroceryPageTable';
+import ImageGallery from './pages/Gallery';
+import ContactForm from './pages/ContactForm';
 
 // Define the function that renders the content in Routes, using State.
 function App() {
@@ -34,6 +36,8 @@ const [grocery, setGrocery] = useState(null);
                     {/* Add Routes for Home, Topics, Gallery, Contact, and Staff Pages.  */}             
                     <Route path="/" element={<HomePage />} />
                     <Route path="/topics" element={<TopicsPage />} />
+                    <Route path="/gallery" element={<ImageGallery />} />
+                    <Route path="/contact" element={<ContactForm />} />
                     <Route path="/groceries" element={<GroceriesPage setGrocery={setGrocery} />} />
                     <Route path="/addGroceries" element={<AddGroceriesPageTable />} />
                     <Route path="/editGroceries" element={<EditGroceriesPageTable groceryToEdit={grocery} />} />

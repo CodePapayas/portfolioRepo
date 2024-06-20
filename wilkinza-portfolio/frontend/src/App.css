@@ -98,6 +98,7 @@
       margin-top: 10px;
       font-style: italic;
     }
+    
     #topic2 {}
   div {}
   aside {}
@@ -117,6 +118,35 @@
   a:hover {}
   a:active {}
   a:visited {}
+
+  /* ImageGallery.css */
+.carousel .slide img {
+  max-width: 100%;
+  max-height: 500px; /* Set the max height you prefer */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.carousel .slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+}
+
+.carousel .carousel .thumbs-wrapper {
+  display: none; /* Hide the thumbnails if you don't need them */
+}
+
+.carousel .legend {
+  position: static;
+  margin-top: 10px;
+  background: none;
+  color: #000; /* Change the color if needed */
+  font-size: 14px; /* Adjust font size if needed */
+  text-align: center;
+}
   
   /*  ----- Navigation ----- Override text links for navigation only.  */
   nav {
