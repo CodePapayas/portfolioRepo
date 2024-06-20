@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 10000;
 const app = express();
 
 // CORS configuration to allow multiple origins
-const allowedOrigins = ['https://portfoliorepo.onrender.com', 'http://localhost:3000', 'http://127.0.0.1:3000'];
+const allowedOrigins = ['https://portfoliorepo.onrender.com', 'http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:8000', 'http://localhost:10000'];
 
 app.use(cors({
     origin: (origin, callback) => {
