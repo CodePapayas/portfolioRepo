@@ -7,7 +7,7 @@ import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
 function GroceriesPage({ setGrocery }) {
     const navigate = useNavigate();
     const [foodItems, setGroceries] = useState([]);
-    const backendUrl = 'https://portfoliorepo.onrender.com';
+    const backendUrl = 'https://portfoliorepobackend.onrender.com';
 
     const loadGroceries = async () => {
         try {

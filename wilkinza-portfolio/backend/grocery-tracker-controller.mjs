@@ -2,9 +2,9 @@ import 'dotenv/config';
 import express from 'express';
 import * as foodItems from './grocery-tracker-model.mjs';
 import nodemailer from 'nodemailer';
-import path from 'path';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
+import path from 'path';
 
 // Get the directory name of the current module
 const __filename = fileURLToPath(import.meta.url);
@@ -12,8 +12,6 @@ const __dirname = path.dirname(__filename);
 
 const PORT = process.env.PORT || 10000;
 const app = express();
-
-app.use(express.static(path.join(__dirname, 'build')));
 
 // CORS configuration to allow multiple origins
 const allowedOrigins = ['https://portfoliorepo.onrender.com', 'http://localhost:3000', 'http://127.0.0.1:3000'];
