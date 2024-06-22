@@ -54,6 +54,7 @@ app.post('/api/contact', async (req, res) => {
 });
 
 app.post('/foodItems', (req, res) => {
+    console.log('Received payload:', req.body);
     foodItems.createFoodItem(
         req.body.food_type, 
         req.body.date_purchased, 
