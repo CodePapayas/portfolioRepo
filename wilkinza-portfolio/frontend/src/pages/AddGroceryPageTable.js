@@ -13,6 +13,7 @@ export const AddGroceriesPageTable = () => {
     const navigate = useNavigate();
 
     const addGrocery = async () => {
+        console.log('addGrocery function called');
         if (foodType === '') {
             alert('Please enter a food type.');
             return;
@@ -43,6 +44,8 @@ export const AddGroceriesPageTable = () => {
             qty_remaining: parseInt(qtyRemaining)
         };
 
+        console.log('New grocery item to add:', newGrocery);
+
         const response = await fetch('/foodItems', {
             method: 'post',
             body: JSON.stringify(newGrocery),
@@ -50,6 +53,8 @@ export const AddGroceriesPageTable = () => {
                 'Content-Type': 'application/json',
             },
         });
+
+        console.log('Response from server:', response);
 
         if (response.status === 201) {
             alert('Grocery item added successfully.');
@@ -141,7 +146,10 @@ export const AddGroceriesPageTable = () => {
                                 <label htmlFor="submit">Commit</label>
                                 <button
                                     type="button"
-                                    onClick={addGrocery}
+                                    onClick={() => {
+                                        console.log('Add button clicked');
+                                        addGrocery();
+                                    }}
                                     id="submit"
                                     style={{ border: 'none', background: 'none', cursor: 'pointer' }}
                                 >

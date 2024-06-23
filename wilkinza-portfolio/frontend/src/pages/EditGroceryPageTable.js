@@ -17,15 +17,24 @@ export const EditGroceryPageTable = ({ groceryToEdit }) => {
             setDateOfActualNextPurchase(groceryToEdit.date_of_actual_next_purchase ? new Date(groceryToEdit.date_of_actual_next_purchase).toISOString().split('T')[0] : '');
             setQtyPurchased(groceryToEdit.qty_purchased || 0);
             setQtyRemaining(groceryToEdit.qty_remaining || 0);
+
+            // Log initial state setup
+            console.log('Initial groceryToEdit values set:', {
+                foodType: groceryToEdit.food_type,
+                datePurchased: groceryToEdit.date_purchased,
+                dateOfExpectedNextPurchase: groceryToEdit.date_of_expected_next_purchase,
+                dateOfActualNextPurchase: groceryToEdit.date_of_actual_next_purchase,
+                qtyPurchased: groceryToEdit.qty_purchased,
+                qtyRemaining: groceryToEdit.qty_remaining
+            });
         }
     }, [groceryToEdit]);
     
-
     const navigate = useNavigate();
 
     const editGrocery = async () => {
         // Debugging statements to log the current state
-        console.log("Current state values:", {
+        console.log("EditGrocery function called with current state values:", {
             food_type: foodType,
             date_purchased: datePurchased,
             date_of_expected_next_purchase: dateOfExpectedNextPurchase,
@@ -46,6 +55,8 @@ export const EditGroceryPageTable = ({ groceryToEdit }) => {
             }),
             headers: { 'Content-Type': 'application/json' },
         });
+
+        console.log('Response from server:', response);
 
         if (response.status === 200) {
             alert('Grocery item updated successfully.');
@@ -137,7 +148,10 @@ export const EditGroceryPageTable = ({ groceryToEdit }) => {
                                 <label htmlFor="submit">Commit</label>
                                 <button
                                     type="button"
-                                    onClick={editGrocery}
+                                    onClick={() => {
+                                        console.log('Edit button clicked');
+                                        editGrocery();
+                                    }}
                                     id="submit"
                                 >Edit</button>
                             </td>
