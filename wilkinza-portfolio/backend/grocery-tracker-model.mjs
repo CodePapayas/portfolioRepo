@@ -66,24 +66,40 @@ const deleteFoodItemById = async (_id) => {
 
 // UPDATE model *****************************************************
 const updateFoodItem = async (_id, food_type, date_purchased, date_of_expected_next_purchase, date_of_actual_next_purchase, qty_purchased, qty_remaining) => {
-    const result = await foodItems.replaceOne({_id: _id }, {
-        food_type: food_type,
-        date_purchased: date_purchased,
-        date_of_expected_next_purchase: date_of_expected_next_purchase,
-        date_of_actual_next_purchase: date_of_actual_next_purchase,
-        qty_purchased: qty_purchased,
-        qty_remaining: qty_remaining
-    });
-    return { 
-        _id: _id, 
-        food_type: food_type,
-        date_purchased: date_purchased,
-        date_of_expected_next_purchase: date_of_expected_next_purchase,
-        date_of_actual_next_purchase: date_of_actual_next_purchase,
-        qty_purchased: qty_purchased,
-        qty_remaining: qty_remaining 
+    try {
+        const result = await foodItems.replaceOne(
+            { _id: _id },
+            {
+                food_type: food_type,
+                date_purchased: date_purchased,
+                date_of_expected_next_purchase: date_of_expected_next_purchase,
+                date_of_actual_next_purchase: date_of_actual_next_purchase,
+                qty_purchased: qty_purchased,
+                qty_remaining: qty_remaining
+            }
+        );
+
+        if (result.modifiedCount === 1) {
+            console.log('Update successful');
+        } else {
+            console.log('No document matched the provided query.');
+        }
+
+        return { 
+            _id: _id, 
+            food_type: food_type,
+            date_purchased: date_purchased,
+            date_of_expected_next_purchase: date_of_expected_next_purchase,
+            date_of_actual_next_purchase: date_of_actual_next_purchase,
+            qty_purchased: qty_purchased,
+            qty_remaining: qty_remaining 
+        };
+    } catch (error) {
+        console.error('Error updating food item:', error);
+        throw new Error('Failed to update food item');
     }
-}
+};
+
 
 // EXPORT the variables for use in the controller file.
 export { createFoodItem, retrieveFoodItems, retrieveFoodItemByID, updateFoodItem, deleteFoodItemById }
