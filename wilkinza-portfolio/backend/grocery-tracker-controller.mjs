@@ -17,7 +17,7 @@ const app = express();
 const allowedOrigins = ['https://portfoliorepo.onrender.com', 'http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:8000', 'http://localhost:10000'];
 
 app.use(cors({
-    origin: '*',
+    origin: allowedOrigins,
     methods: 'GET,POST,PUT,DELETE',
     allowedHeaders: 'Content-Type'
 }));
